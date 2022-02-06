@@ -20,7 +20,7 @@
             <!-- Modal body -->
             <div class="modal-body">
 
-              <form (submit)="addquote()">
+              <form id="form" (submit)="addquote()">
                 <div class="row">
                   <div class="col">
                     <input type="text" class="form-control" placeholder="Enter your name" [(ngModel)]="user"
@@ -40,7 +40,7 @@
                 </div> <br>
                 <div class="row">
                   <div class="col">
-                    <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Add Quote</button>
+                    <button type="submit" onsubmit="clearform()" class="btn btn-success" data-bs-dismiss="modal">Add Quote</button>
                   </div>
                 </div>
               </form>

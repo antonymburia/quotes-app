@@ -32,14 +32,19 @@ export class BodyComponent implements OnInit {
 
 
   addquote() {
+    
     this.quotes.push(
       { id: this.id, authorname: this.authorname, user: this.user, content: this.content, likes: this.likes, unlikes: this.unlikes, day: this.day }
-    )
+    );
+    this.authorname ='';
+    this.user = '';
+    this. content ='';
   }
 
   delete(index:number){
     this.quotes.splice(index, 1)
   }
+
 
 
   constructor() { }
