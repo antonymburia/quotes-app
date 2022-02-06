@@ -76,7 +76,7 @@
             <button (click)=' addlike(i)'><i class="fas fa-heart"></i> {{this.quote.likes}}</button>&nbsp;
             <button (click)=' dislike(i)'><i class="fas fa-heart-broken"></i>{{this.quote.unlikes}}</button>
 
-            &nbsp;&nbsp;Delete &nbsp; <button><i class="fas fa-trash-alt"></i></button>
+            &nbsp;&nbsp;Delete &nbsp; <button (click)=" delete(i)"><i class="fas fa-trash-alt"></i></button>
 
           </div>
 

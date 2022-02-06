@@ -20,21 +20,25 @@ export class BodyComponent implements OnInit {
     new Quote(1, this.authorname, this.user, this.content, this.day)
 
   ]
-  
 
-  
-addlike(index:number){
-  this.quotes[index].likes++;
-}
-dislike(index:number){
-  this.quotes[index].unlikes++
-}
-  
+
+
+  addlike(index: number) {
+    this.quotes[index].likes++;
+  }
+  dislike(index: number) {
+    this.quotes[index].unlikes++
+  }
+
 
   addquote() {
     this.quotes.push(
       { id: this.id, authorname: this.authorname, user: this.user, content: this.content, likes: this.likes, unlikes: this.unlikes, day: this.day }
     )
+  }
+
+  delete(index:number){
+    this.quotes.splice(index, 1)
   }
 
 
