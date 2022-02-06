@@ -32,7 +32,11 @@ export class BodyComponent implements OnInit {
 
 
   addquote() {
-    
+    if (this.authorname=='') {
+      this.authorname = 'unknown';
+      
+    } 
+
     this.quotes.push(
       { id: this.id, authorname: this.authorname, user: this.user, content: this.content, likes: this.likes, unlikes: this.unlikes, day: this.day }
     );
