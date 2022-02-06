@@ -1,17 +1,87 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-8">
-      <div class="quote">
-        <div class="content">
-          
-        </div>
-        <div class="upvote">
+    <div class="col-md-4">
+      <!-- Button to Open the Modal -->
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+        Add new Quote
+      </button>
 
+      <!-- The Modal -->
+      <div class="modal" id="myModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">New Quote</h4>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+
+              <form (submit)="addquote()">
+                <div class="row">
+                  <div class="col">
+                    <input type="text" class="form-control" placeholder="Enter your name" [(ngModel)]="user"
+                      name="name">
+                  </div>
+                  <div class="col">
+                    <input type="text" class="form-control" placeholder="Enter Quote author's name"
+                      [(ngModel)]="authorname" name="author">
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <label for="comment">Enter Quote:</label>
+                    <textarea class="form-control" rows="5" id="comment" name="text"
+                      placeholder="Type here then click add quote button below" [(ngModel)]="content"></textarea>
+                  </div>
+                </div> <br>
+                <div class="row">
+                  <div class="col">
+                    <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Add Quote</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+            </div>
+
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-md-4">
-      <app-app-form></app-app-form>
+    <!-- second columm -->
+    <div class="col-md-8">
+      <div class="quote" *ngFor="let quote of quote;">
+        <div class="content">
+          <div class="card">
+            <div class="card-header">Quote</div>
+            <div class="card-body">
+              <b><i>{{quote.content}}</i></b>
+              <div class="author" >
+                <h2><b>{{quote.authorname}}</b></h2>
+              </div>
+            </div> 
+            <div class="footer">
+              <div class="upvote">
+
+              </div>
+             <p>&nbsp;  This quote was posted by &nbsp; @{{quote.name}} </p>
+            </div>
+          </div>
+          
+        </div>
+        
+        <div class="name">
+          
+        </div>
+        
+      </div>
     </div>
   </div>
 </div>

@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
 import { BodyComponent } from './body/body.component';
-import { AppFormComponent } from './app-form/app-form.component';
 import { FormsModule } from '@angular/forms';
 import { QuotesComponent } from './quotes/quotes.component';
 
@@ -16,7 +15,6 @@ import { QuotesComponent } from './quotes/quotes.component';
     NavigationComponent,
     FooterComponent,
     BodyComponent,
-    AppFormComponent,
     QuotesComponent
   ],
   imports: [
