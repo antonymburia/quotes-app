@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Quote } from '../quote';
 
 @Component({
   selector: 'app-body',
@@ -13,23 +14,15 @@ export class BodyComponent implements OnInit {
   likes: number = 0
   unlikes: number = 0
 
-  quote = [
-    { name: this.user, authorname: this.authorname, content: this.content, likes: 0, unlikes: 0, day: new Date(), }
+  quotes: Quote[] = [
+    new Quote(1, "Benjaminfranklin", "Antony Mburia", "Tell me and I forget. Teach me and I remember. Involve me and I learn.", new Date(), 0, 0)
   ]
-  addlike(){
-    this.likes++;
-    return this.likes;
+  addNewQuote(quote) {
+    quote.author = quote.author;
+    quote.user = quote.user;
+    quote.content = quote.content;
+    this.quotes.push(quote)
   }
-  dislike(){
-    this.unlikes++;
-  }
-  addquote() {
-    this.quote.push(
-      { name: this.user, authorname: this.authorname, content: this.content, likes:this.likes, unlikes:this.unlikes, day: this.day}
-    )
-  }
-  
-
   constructor() { }
 
   ngOnInit(): void {

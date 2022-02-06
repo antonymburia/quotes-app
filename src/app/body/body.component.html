@@ -20,7 +20,7 @@
             <!-- Modal body -->
             <div class="modal-body">
 
-              <form (submit)="addquote()">
+              <form (submit)="addNewQuote(quote)">
                 <div class="row">
                   <div class="col">
                     <input type="text" class="form-control" placeholder="Enter your name" [(ngModel)]="user"
@@ -56,8 +56,8 @@
       </div>
     </div>
     <!-- second columm -->
-    <div class="col-md-8">
-      <div class="quote" *ngFor="let quote of quote;">
+    <!-- <div class="col-md-8">
+      <div class="quote" *ngFor="let quote of quotes;">
         <div class="content">
           <div class="card">
             <div class="card-header">Quote</div>
@@ -73,8 +73,8 @@
             </div>
           </div>
           <div class="upvote">
-            <button (click)=' addlike()'><i class="fas fa-heart"></i> {{likes}}</button>&nbsp;
-            <button (click)=' dislike()'><i class="fas fa-heart-broken"></i>{{unlikes}}</button>
+            <button (click)=' addlike()'><i class="fas fa-heart"></i> {{this.quote.likes}}</button>&nbsp;
+            <button (click)=' dislike()'><i class="fas fa-heart-broken"></i>{{this.quote.unlikes}}</button>
 
             &nbsp;&nbsp;Delete &nbsp; <button><i class="fas fa-trash-alt"></i></button>
 
@@ -83,6 +83,6 @@
         </div>
 
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
