@@ -16,16 +16,13 @@ export class BodyComponent implements OnInit {
   id: number = 0;
 
   quotes: Quote[] = [
-    new Quote(1, "Benjaminfranklin", "Antony Mburia", "Tell me and I forget. Teach me and I remember. Involve me and I learn.", new Date())
+    new Quote(0, 'Mark Twain', this.user, '“Clothes make the man. Naked people have little or no influence in society.”', this.day),
+    new Quote(1, this.authorname, this.user, this.content, this.day)
+
   ]
   
 
-  // addNewQuote(quote: Quote) {
-  //   quote.authorname = quote.authorname;
-  //   quote.user = quote.user;
-  //   quote.content = quote.content;
-  //   this.quotes.push(quote)
-  // }
+  
 addlike(index:number){
   this.quotes[index].likes++;
 }
