@@ -73,10 +73,10 @@
             </div>
           </div>
           <div class="upvote">
-            <button><i class="fas fa-heart"></i> </button>&nbsp;
-            <button><i class="fas fa-heart-broken"></i></button>
+            <button (click)=' addlike()'><i class="fas fa-heart"></i> {{likes}}</button>&nbsp;
+            <button (click)=' dislike()'><i class="fas fa-heart-broken"></i>{{unlikes}}</button>
 
-            &nbsp;&nbsp;Delete &nbsp; <button><i class="fas fa-trash-alt"></i>g</button>
+            &nbsp;&nbsp;Delete &nbsp; <button><i class="fas fa-trash-alt"></i></button>
 
           </div>
 
