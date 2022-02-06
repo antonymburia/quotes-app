@@ -44,7 +44,7 @@
                 </div> <br>
                 <div class="row">
                   <div class="col">
-                    <button type="submit" class="btn btn-success" data-bs-dismiss="modal">Add Quote</button>
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Add Quote</button>
                   </div>
                 </div>
               </form>
@@ -77,8 +77,8 @@
             </div>
           </div>
           <div class="upvote">
-            <button (click)="isClicked = !isClicked" [class.click]="isClicked" (click)=' addlike(i)'><i class="fas fa-heart"></i> {{this.quote.likes}}</button>&nbsp;
-            <button (click)="isClicked = !isClicked" [class.clicks]="isClicked" (click)=' dislike(i)'><i class="fas fa-heart-broken"></i>{{this.quote.unlikes}}</button>
+            <button class="clicks" (click)=' addlike(i)'><i class="fas fa-heart"></i> {{this.quote.likes}}</button>&nbsp;
+            <button class="clicks" (click)=' dislike(i)'><i class="fas fa-heart-broken"></i>{{this.quote.unlikes}}</button>
 
             &nbsp;&nbsp;Delete &nbsp; <button (click)=" delete(i)"><i class="fas fa-trash-alt"></i></button>
 
