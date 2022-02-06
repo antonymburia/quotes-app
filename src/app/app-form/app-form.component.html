@@ -16,8 +16,14 @@
 
       <!-- Modal body -->
       <div class="modal-body">
-        {{user}}
-        <form>
+        <div>
+          <ul>
+            <li *ngFor="let quote of quote;">
+              {{quote.name}}
+            </li>
+          </ul>
+        </div>
+        <form (submit)="addquote()">
           <div class="row">
             <div class="col">
               <input type="text" class="form-control" placeholder="Enter your name" [(ngModel)]="user" name="name">
@@ -34,7 +40,7 @@
           </div> <br>
           <div class="row">
             <div class="col">
-              <button type="button" class="btn btn-success">Add Quote</button>
+              <button type="submit" class="btn btn-success">Add Quote</button>
             </div>
           </div>
         </form>

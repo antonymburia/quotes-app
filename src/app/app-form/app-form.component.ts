@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-app-form',
@@ -9,6 +9,15 @@ export class AppFormComponent implements OnInit {
  user =''
  authorname =''
  content = ''
+
+ quote = [
+   {name:this.user, authorname:this.authorname, content:this.content }
+ ]
+ addquote(){
+  this.quote.push(
+    {name:this.user, authorname:this.authorname, content:this.content}
+  )
+ }
   constructor() { }
 
   ngOnInit(): void {
