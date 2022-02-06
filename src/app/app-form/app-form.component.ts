@@ -6,7 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app-form.component.css']
 })
 export class AppFormComponent implements OnInit {
-
+ user =''
+ authorname =''
+ content = ''
   constructor() { }
 
   ngOnInit(): void {

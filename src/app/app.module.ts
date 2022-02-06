@@ -8,6 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BodyComponent } from './body/body.component';
 import { AppFormComponent } from './app-form/app-form.component';
 import { FormsModule } from '@angular/forms';
+import { QuotesComponent } from './quotes/quotes.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     NavigationComponent,
     FooterComponent,
     BodyComponent,
-    AppFormComponent
+    AppFormComponent,
+    QuotesComponent
   ],
   imports: [
     BrowserModule,

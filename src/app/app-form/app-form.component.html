@@ -16,25 +16,23 @@
 
       <!-- Modal body -->
       <div class="modal-body">
+        {{user}}
         <form>
           <div class="row">
             <div class="col">
-              <input type="text" class="form-control" placeholder="Enter your name" name="name">
+              <input type="text" class="form-control" placeholder="Enter your name" [(ngModel)]="user" name="name">
             </div>
             <div class="col">
-              <input type="text" class="form-control" placeholder="Enter Quote author's name" name="author">
+              <input type="text" class="form-control" placeholder="Enter Quote author's name" [(ngModel)]="authorname" name="author">
             </div>
           </div>
           <div class="row">
             <div class="col">
               <label for="comment">Enter Quote:</label>
-              <textarea class="form-control" rows="5" id="comment" name="text" placeholder="Type here then click add quote button below"></textarea>
+              <textarea class="form-control" rows="5" id="comment" name="text" placeholder="Type here then click add quote button below" [(ngModel)]="content"></textarea>
             </div>
           </div> <br>
           <div class="row">
-            <div class="col">
-              <input type="date" class="form-control" placeholder="Enter Quote author's name" name="author">
-            </div>
             <div class="col">
               <button type="button" class="btn btn-success">Add Quote</button>
             </div>
