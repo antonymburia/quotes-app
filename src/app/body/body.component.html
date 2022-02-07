@@ -1,99 +1,104 @@
 <div class="container">
-  <h1><b>Quotes App</b></h1>
-  <div class="row">
-    <div class="col-md-4">
-      <!-- Button to Open the Modal -->
-      <h2>Click to add A new Quote</h2>
-      <div class="flexbt">
-        <div class="input">
-      
-          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-            Add new Quote
-          </button>
+  <div class="body">
+    <h1><b>Quotes App</b></h1>
+    <div class="row">
+      <div class="col-md-4">
+        <!-- Button to Open the Modal -->
+        <h2>Click to add A new Quote</h2>
+        <div class="flexbt">
+          <div class="input">
+
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+              Add new Quote
+            </button>
+          </div>
+          <div class="best">
+            <button type="button" class="btn btn-primary">
+              &nbsp; Best Quotes &nbsp;
+            </button>
+          </div>
         </div>
-        <div class="best">  
-          <button type="button" class="btn btn-primary">
-            &nbsp; Best Quotes &nbsp;
-          </button>
-        </div>
-      </div>
 
-      <!-- The Modal -->
-      <div class="modal" id="myModal">
-        <div class="modal-dialog">
-          <div class="modal-content">
+        <!-- The Modal -->
+        <div class="modal" id="myModal">
+          <div class="modal-dialog">
+            <div class="modal-content">
 
-            <!-- Modal Header -->
-            <div class="modal-header">
-              <h4 class="modal-title">New Quote</h4>
-              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">New Quote</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+
+              <!-- Modal body -->
+              <div class="modal-body">
+
+                <form id="form" (submit)="addquote()">
+                  <div class="row">
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Enter your name" [(ngModel)]="user"
+                        name="name">
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Enter Quote author's name"
+                        [(ngModel)]="authorname" name="author">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label for="comment">Enter Quote:</label>
+                      <textarea class="form-control" rows="5" id="comment" name="text"
+                        placeholder="Type here then click add quote button below" [(ngModel)]="content"></textarea>
+                    </div>
+                  </div> <br>
+                  <div class="row">
+                    <div class="col">
+                      <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Add Quote</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+              </div>
+
             </div>
-
-            <!-- Modal body -->
-            <div class="modal-body">
-
-              <form id="form" (submit)="addquote()">
-                <div class="row">
-                  <div class="col">
-                    <input type="text" class="form-control" placeholder="Enter your name" [(ngModel)]="user"
-                      name="name">
-                  </div>
-                  <div class="col">
-                    <input type="text" class="form-control" placeholder="Enter Quote author's name"
-                      [(ngModel)]="authorname" name="author">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col">
-                    <label for="comment">Enter Quote:</label>
-                    <textarea class="form-control" rows="5" id="comment" name="text"
-                      placeholder="Type here then click add quote button below" [(ngModel)]="content"></textarea>
-                  </div>
-                </div> <br>
-                <div class="row">
-                  <div class="col">
-                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Add Quote</button>
-                  </div>
-                </div>
-              </form>
-            </div>
-
-            <!-- Modal footer -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-            </div>
-
           </div>
         </div>
       </div>
-    </div>
-    <!-- second columm -->
-    <div class="col-md-8">
-      <div class="quote" *ngFor="let quote of quotes; let i = index">
-        <div class="content">
-          <div class="card">
-            <div class="card-header">Quote</div>
-            <div class="card-body">
-              <b><i>{{quote.content}}</i></b>
-              <div class="author">
-                <h2><b>—{{quote.authorname}}</b></h2>
+      <!-- second columm -->
+      <div class="col-md-8">
+        <div class="quote" *ngFor="let quote of quotes; let i = index">
+          <div class="content">
+            <div class="card">
+              <div class="card-header">Quote</div>
+              <div class="card-body">
+                <b><i>{{quote.content}}</i></b>
+                <div class="author">
+                  <h2><b>—{{quote.authorname}}</b></h2>
+                </div>
+              </div>
+              <div class="footer">
+
+                <p>&nbsp; This quote was posted by &nbsp; @{{quote.user}} </p>
               </div>
             </div>
-            <div class="footer">
+            <div class="upvote">
+              <button class="clicks" (click)=' addlike(i)'><i class="fas fa-heart"></i>
+                {{this.quote.likes}}</button>&nbsp;
+              <button class="clicks" (click)=' dislike(i)'><i
+                  class="fas fa-heart-broken"></i>{{this.quote.unlikes}}</button>
+              {{quote.day}} {{timepassed}}
 
-              <p>&nbsp; This quote was posted by &nbsp; @{{quote.user}} </p>
+              &nbsp;&nbsp;Delete &nbsp; <button (click)=" delete(i)"><i class="fas fa-trash-alt"></i></button>
+
             </div>
-          </div>
-          <div class="upvote">
-            <button class="clicks" (click)=' addlike(i)'><i class="fas fa-heart"></i> {{this.quote.likes}}</button>&nbsp;
-            <button class="clicks" (click)=' dislike(i)'><i class="fas fa-heart-broken"></i>{{this.quote.unlikes}}</button>
-
-            &nbsp;&nbsp;Delete &nbsp; <button (click)=" delete(i)"><i class="fas fa-trash-alt"></i></button>
 
           </div>
 
         </div>
-
       </div>
     </div>
   </div>
