@@ -6,6 +6,8 @@ export class Quote {
   day:  Date;
   likes: number;
   unlikes: number;
+  time:number;
+  key:string;
 
   constructor(id: number, authorname: string, user: string, content: string, day: Date) {
     this.id = id;
@@ -15,6 +17,8 @@ export class Quote {
     this.day = day;
     this.likes = 0;
     this.unlikes = 0;
+    this.time = 0;
+    this.key = '';
   }
 }
 

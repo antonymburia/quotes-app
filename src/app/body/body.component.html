@@ -90,9 +90,10 @@
                 {{this.quote.likes}}</button>&nbsp;
               <button class="clicks" (click)=' dislike(i)'><i
                   class="fas fa-heart-broken"></i>{{this.quote.unlikes}}</button>
-              {{quote.day}} {{timepassed}}
+              
 
-              &nbsp;&nbsp;Delete &nbsp; <button (click)=" delete(i)"><i class="fas fa-trash-alt"></i></button>
+              &nbsp;&nbsp;Delete &nbsp; <button (click)=" delete(i)"><i class="fas fa-trash-alt"></i></button> &nbsp; 
+              {{timediff(i)}} {{timehours(i)}}
 
             </div>
 
