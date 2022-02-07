@@ -2,6 +2,7 @@ import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Quote } from '../quote';
 
+
 @Component({
   selector: 'app-body',
   templateUrl: './body.component.html',

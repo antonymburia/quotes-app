@@ -13,17 +13,29 @@
             </button>
           </div>
           <div class="best">
-            <button (click)="bestquote()" type="button" class="btn btn-primary">
+            <button (click)="bestquote()" type="button" class="btn btn-primary" id="pover-card" data-toggle="popover" data-trigger="focus" data-placement="bottom">
               &nbsp; Best Quotes &nbsp;
             </button>
           </div>
         </div>
 
         <div class="bestresult">
-          {{best}}
-          {{content}}
-          {{authorname}}
-          
+          <div id="popover-card">
+            <div class="card" *ngIf='quotes'>
+              <div class="card-header">Best Quote</div>
+              <div class="card-body">
+                <b><i>{{content}}</i></b>
+                <div class="author">
+                  <h2><b>—{{authorname}}</b></h2>
+                </div>
+              </div>
+              <div class="footer">
+                Likes{{best}}
+                
+              </div>
+            </div>
+          </div>
+
         </div>
 
         <!-- The Modal -->
@@ -79,7 +91,7 @@
       <div class="col-md-8">
         <div class="quote" *ngFor="let quote of quotes; let i = index">
           <div class="content">
-            <div class="card">
+            <div class="card card1">
               <div class="card-header">Quote</div>
               <div class="card-body">
                 <b><i>{{quote.content}}</i></b>
@@ -97,9 +109,9 @@
                 {{this.quote.likes}}</button>&nbsp;
               <button class="clicks" (click)=' dislike(i)'><i
                   class="fas fa-heart-broken"></i>{{this.quote.unlikes}}</button>
-              
 
-              &nbsp;&nbsp;Delete &nbsp; <button (click)=" delete(i)"><i class="fas fa-trash-alt"></i></button> &nbsp; 
+
+              &nbsp;&nbsp;Delete &nbsp; <button (click)=" delete(i)"><i class="fas fa-trash-alt"></i></button> &nbsp;
               {{timediff(i)}} {{timehours(i)}}
 
             </div>
@@ -111,3 +123,4 @@
     </div>
   </div>
 </div>
+

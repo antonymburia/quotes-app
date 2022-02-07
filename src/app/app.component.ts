@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'quotes-app';
 
+  
   parentFunction(data:any){
     console.warn(data)
   }

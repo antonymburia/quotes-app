@@ -6,6 +6,11 @@
   
 }
 .card{
+  margin-top: 10px;
+  padding: 0 2% 0 2%;
+  width: 79%;
+}
+.card1{
   width: 75%;
   margin: 10px 0 10px;
   padding: 5px;
