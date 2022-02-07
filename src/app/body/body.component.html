@@ -13,10 +13,17 @@
             </button>
           </div>
           <div class="best">
-            <button type="button" class="btn btn-primary">
+            <button (click)="bestquote()" type="button" class="btn btn-primary">
               &nbsp; Best Quotes &nbsp;
             </button>
           </div>
+        </div>
+
+        <div class="bestresult">
+          {{best}}
+          {{content}}
+          {{authorname}}
+          
         </div>
 
         <!-- The Modal -->
