@@ -19,11 +19,10 @@ export class BodyComponent implements OnInit {
   key:string = ''
 
   quotes: Quote[] = [
-    new Quote(0, 'Mark Twain', 'Antony Mburia', '“Clothes make the man. Naked people have little or no influence in society.”', new Date(2022, 2, 1, 13, 58, 17)),
-    new Quote(1, 'Benjamin Franklin', 'Antony Mburia', 'Tell me and I forget. Teach me and I remember. Involve me and I learn. -', new Date(2022, 2, 1, 15, 58, 17))
+    new Quote(0, 'Mark Twain', 'Antony Mburia', '“Clothes make the man. Naked people have little or no influence in society.”', new Date(2022, 2, 0, 20, 0, 17)),
+    new Quote(1, 'Benjamin Franklin', 'Antony Mburia', 'Tell me and I forget. Teach me and I remember. Involve me and I learn. -', new Date(2022, 2, 2, 15, 58, 17))
 
   ]
-
 
 
   addlike(index: number) {
@@ -49,6 +48,7 @@ export class BodyComponent implements OnInit {
     
   }
 
+
   delete(index: number) {
     this.quotes.splice(index, 1)
   }
@@ -59,12 +59,12 @@ export class BodyComponent implements OnInit {
   timediff(index:number) {
     var uploadtime = new Date(this.quotes[index].day).getTime()
     var newtime = new Date().getTime()
-    var diff = newtime - uploadtime;
+    var diff = uploadtime - newtime;
     var dayspassed = Math.floor(diff / 86400000);//days
     var timehours = Math.floor((diff % 86400000) / 3600000); //hours
     var timeminutes = Math.ceil(((diff % 86400000) / 3600000) / 60000); //minutes
   
-    if (dayspassed>=1) {
+    if (dayspassed >=1 ) {
       this.quotes[index].time = dayspassed
       return this.quotes[index].time;
     } else {
@@ -81,7 +81,7 @@ export class BodyComponent implements OnInit {
     var timehours = Math.floor((diff % 86400000) / 3600000); //hours
     var timeminutes = Math.ceil(((diff % 86400000) / 3600000) / 60000); //minutes
     
-    if (dayspassed>=1) {
+    if (dayspassed >=1) {
       return  i = "days ago"
     } else {
       return i ="hours ago"
