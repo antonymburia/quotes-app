@@ -38,7 +38,7 @@ export class BodyComponent implements OnInit {
     if (this.authorname == '') {
       this.authorname = 'unknown';
       if (this.user =='') {
-        this.authorname ='anonymous'
+        this.user ='anonymous'
       }
 
     }
