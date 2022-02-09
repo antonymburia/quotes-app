@@ -1,14 +1,25 @@
+.container{
+  background-image: url('src/assets/images/marble.jpg');
+  background-size: cover;
+}
 .body{
-  background-color: #f7f7f7;
+  background-color: rgb(247,247,247,0.5);
   margin-bottom: 10px;
   padding: 5%;
   border-radius: 0 0 10px 10px;
   
 }
+span{
+  font-weight: 900;
+  color: red;
+}
 .card{
   margin-top: 10px;
   padding: 0 2% 0 2%;
   width: 79%;
+}
+.besthd{
+  box-shadow:rgb(246,94,162,0.4) 0px 0px 3px 4px;
 }
 .card1{
   width: 75%;

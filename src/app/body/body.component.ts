@@ -20,8 +20,8 @@ export class BodyComponent implements OnInit {
   key: string = ''
 
   quotes: Quote[] = [
-    new Quote(0, 'Mark Twain', 'Antony Mburia', '“Clothes make the man. Naked people have little or no influence in society.”', new Date(2022, 2, 2, 10, 58, 17)),
-    new Quote(1, 'Benjamin Franklin', 'Antony Mburia', 'Tell me and I forget. Teach me and I remember. Involve me and I learn. -', new Date(2022, 2, 0, 16, 0, 17))
+    new Quote(0, 'Mark Twain', 'Antony Mburia', '“Clothes make the man. Naked people have little or no influence in society.”', new Date(2022, 1, 6, 1, 58, 17)),
+    new Quote(1, 'Benjamin Franklin', 'Antony Mburia', 'Tell me and I forget. Teach me and I remember. Involve me and I learn. -', new Date(2022, 1, 6, 1, 0, 17))
 
   ]
 

@@ -13,16 +13,16 @@
             </button>
           </div>
           <div class="best">
-            <button (click)="bestquote()" type="button" class="btn btn-primary" id="pover-card" data-toggle="popover" data-trigger="focus" data-placement="bottom">
+            <button (click)="bestquote()" type="button" class="btn btn-primary">
               &nbsp; Best Quotes &nbsp;
             </button>
           </div>
         </div>
 
-        <div class="bestresult">
+        <div class="bestresults">
           <div id="popover-card">
             <div class="card" *ngIf='quotes'>
-              <div class="card-header">Best Quote</div>
+              <div class="card-header besthd">Best Quote</div>
               <div class="card-body">
                 <b><i>{{content}}</i></b>
                 <div class="author">
@@ -30,8 +30,8 @@
                 </div>
               </div>
               <div class="footer">
-                Likes{{best}}
-                
+                <span>{{best}}</span> &nbsp;Likes
+
               </div>
             </div>
           </div>
@@ -123,4 +123,3 @@
     </div>
   </div>
 </div>
-
