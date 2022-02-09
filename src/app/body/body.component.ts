@@ -20,7 +20,7 @@ export class BodyComponent implements OnInit {
   key: string = ''
 
   quotes: Quote[] = [
-    new Quote(0, 'Mark Twain', 'Antony Mburia', '“Clothes make the man. Naked people have little or no influence in society.”', new Date(2022, 1, 6, 1, 58, 17)),
+    new Quote(0, 'Mark Twain', 'Antony Mburia', '“Clothes make the man. Naked people have little or no influence in society.”', new Date(2022, 1, 5, 1, 58, 17)),
     new Quote(1, 'Benjamin Franklin', 'Antony Mburia', 'Tell me and I forget. Teach me and I remember. Involve me and I learn. -', new Date(2022, 1, 6, 1, 0, 17))
 
   ]
@@ -37,6 +37,9 @@ export class BodyComponent implements OnInit {
   addquote() {
     if (this.authorname == '') {
       this.authorname = 'unknown';
+      if (this.user =='') {
+        this.authorname ='anonymous'
+      }
 
     }
 
@@ -63,15 +66,18 @@ export class BodyComponent implements OnInit {
     var diff = newtime - uploadtime;
     var dayspassed = Math.floor(diff / 86400000);//days
     var timehours = Math.floor((diff % 86400000) / 3600000); //hours
-    var timeminutes = Math.ceil(((diff % 86400000) / 3600000) / 60000); //minutes
+    var timeminutes = Math.floor(((diff % 86400000) / 3600000) / 60000); //minutes
 
     if (dayspassed >= 1) {
       this.quotes[index].time = dayspassed
       return this.quotes[index].time;
     } else {
       this.quotes[index].time = timehours
-      return this.quotes[index].time = timehours
-
+        if (timehours<1) {
+          this.quotes[index].time = timeminutes;
+          return this.quotes[index].time;
+        }
+        return this.quotes[index].time;
     }
   }
   timehours(i: any) {
@@ -80,13 +86,17 @@ export class BodyComponent implements OnInit {
     var diff =  newtime - uploadtime;
     var dayspassed = Math.floor(diff / 86400000);//days
     var timehours = Math.floor((diff % 86400000) / 3600000); //hours
-    var timeminutes = Math.ceil(((diff % 86400000) / 3600000) / 60000); //minutes
+    var timeminutes = Math.floor(((diff % 86400000) / 3600000) / 60000); //minutes
 
     if (dayspassed >= 1) {
       return i = "days ago"
     } else {
-      return i = "hours ago"
-
+     i = "hours ago"
+      if (timehours<1) {
+        i = "minutes ago";
+        return i;
+      }
+      return i;
     }
 
   }
