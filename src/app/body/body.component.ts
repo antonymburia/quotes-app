@@ -76,7 +76,7 @@ export class BodyComponent implements OnInit {
   }
   timehours(i: any) {
     var uploadtime = new Date(this.quotes[i].day).getTime()
-    var newtime = new Date().getTime()
+    var newtime = new Date(this.day).getTime()
     var diff =  newtime - uploadtime;
     var dayspassed = Math.floor(diff / 86400000);//days
     var timehours = Math.floor((diff % 86400000) / 3600000); //hours
