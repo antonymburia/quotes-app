@@ -3,7 +3,7 @@
 ## Description
 This is a simple Quotes app where users can read or/and add quotes
 ## Screenshot
-<img src="src/assets/images/Screenshot from 2022-02-09 14-31-03.png" alt="">
+<img src="src/assets/images/Screenshot from 2022-02-10 12-24-58.png" alt="">
 
 
 
