@@ -124,15 +124,16 @@ export class BodyComponent implements OnInit {
         this.best = this.quotes[i].likes;
         
       }
-      if (this.best == 0) {
+      
+
+    }
+    if (this.best == 0) {
 
         this.show = false;
         this.resultshow = true;
         
 
       }
-
-    }
   }
 
 
