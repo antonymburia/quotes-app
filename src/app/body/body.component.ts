@@ -109,7 +109,7 @@ export class BodyComponent implements OnInit {
   best!: number;
   show: boolean = false;
   resultshow: boolean = false;
-  result: string = 'all quotes have 0 upvotes Only best quotes will show';
+  result: string = 'Only best quotes will show';
 
   bestquote() {
     this.show = !this.show;
@@ -122,11 +122,13 @@ export class BodyComponent implements OnInit {
         this.authorname = this.quotes[i].authorname;
         this.user = this.quotes[i].user;
         this.best = this.quotes[i].likes;
+        
       }
       if (this.best == 0) {
 
         this.show = false;
         this.resultshow = true;
+        
 
       }
 
