@@ -18,20 +18,19 @@
             </button>
           </div>
         </div>
-        <div *ngIf="resultshow" class="result"><b>!!&nbsp;</b>{{this.result}}</div>
 
-        <div *ngIf="show" class="bestresults">
+        <div class="bestresults">
           <div id="popover-card">
             <div class="card" *ngIf='quotes'>
               <div class="card-header besthd">Best Quote</div>
               <div class="card-body">
-                <span appHighlight><b><i>{{content}}</i></b></span>
+                <b><i>{{content}}</i></b>
                 <div class="author">
-                  <span appHighlight><h2><b>—{{authorname}}</b></h2></span>
+                  <h2><b>—{{authorname}}</b></h2>
                 </div>
               </div>
               <div class="footer">
-                <span class="disp">{{best}}</span> &nbsp;Likes
+                <span>{{best}}</span> &nbsp;Likes
 
               </div>
             </div>
@@ -90,9 +89,9 @@
       </div>
       <!-- second columm -->
       <div class="col-md-8">
-        <div class="quote" *ngFor="let quote of quotes; let i = index" >
-          <div class="content" >
-            <div class="card card1" >
+        <div class="quote" *ngFor="let quote of quotes; let i = index">
+          <div class="content">
+            <div class="card card1">
               <div class="card-header">Quote</div>
               <div class="card-body">
                 <b><i>{{quote.content}}</i></b>
@@ -113,7 +112,8 @@
 
 
               &nbsp;&nbsp;Delete &nbsp; <button (click)=" delete(i)"><i class="fas fa-trash-alt"></i></button> &nbsp;
-              {{timediff(i)}} {{timehours(i)}} 
+              {{timediff(i)}} {{timehours(i)}}
+
             </div>
 
           </div>

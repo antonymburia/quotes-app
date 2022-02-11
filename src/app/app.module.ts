@@ -7,7 +7,6 @@ import { NavigationComponent } from './navigation/navigation.component';
 import { FooterComponent } from './footer/footer.component';
 import { BodyComponent } from './body/body.component';
 import { FormsModule } from '@angular/forms';
-import { HighlightDirective } from './highlight.directive';
 
 
 
@@ -16,8 +15,7 @@ import { HighlightDirective } from './highlight.directive';
     AppComponent,
     NavigationComponent,
     FooterComponent,
-    BodyComponent,
-    HighlightDirective
+    BodyComponent
   ],
   imports: [
     BrowserModule,

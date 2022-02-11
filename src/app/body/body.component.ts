@@ -37,8 +37,8 @@ export class BodyComponent implements OnInit {
   addquote() {
     if (this.authorname == '') {
       this.authorname = 'unknown';
-      if (this.user == '') {
-        this.user = 'anonymous'
+      if (this.user =='') {
+        this.user ='anonymous'
       }
 
     }
@@ -58,10 +58,7 @@ export class BodyComponent implements OnInit {
   }
 
 
-  // setIntrvl(index:number){
-  //   setInterval(() => this.timediff(this.quotes[index].id),1000);
 
-  // }
 
   timediff(index: number) {
     var uploadtime = new Date(this.quotes[index].day).getTime()
@@ -76,17 +73,17 @@ export class BodyComponent implements OnInit {
       return this.quotes[index].time;
     } else {
       this.quotes[index].time = timehours
-      if (timehours < 1) {
-        this.quotes[index].time = timeminutes;
+        if (timehours<1) {
+          this.quotes[index].time = timeminutes;
+          return this.quotes[index].time;
+        }
         return this.quotes[index].time;
-      }
-      return this.quotes[index].time;
     }
   }
   timehours(i: any) {
     var uploadtime = new Date(this.quotes[i].day).getTime()
     var newtime = new Date(this.day).getTime()
-    var diff = newtime - uploadtime;
+    var diff =  newtime - uploadtime;
     var dayspassed = Math.floor(diff / 86400000);//days
     var timehours = Math.floor((diff % 86400000) / 3600000); //hours
     var timeminutes = Math.floor(((diff % 86400000) / 3600000) / 60000); //minutes
@@ -94,8 +91,8 @@ export class BodyComponent implements OnInit {
     if (dayspassed >= 1) {
       return i = "days ago"
     } else {
-      i = "hours ago"
-      if (timehours < 1) {
+     i = "hours ago"
+      if (timehours<1) {
         i = "minutes ago";
         return i;
       }
@@ -104,16 +101,9 @@ export class BodyComponent implements OnInit {
 
   }
 
-
-
   best!: number;
-  show: boolean = false;
-  resultshow: boolean = false;
-  result: string = 'all quotes have 0 upvotes Only best quotes will show';
 
   bestquote() {
-    this.show = !this.show;
-    this.resultshow = !this.resultshow;
     this.best = 0;
 
     for (let i = 0; i < this.quotes.length; i++) {
@@ -122,12 +112,6 @@ export class BodyComponent implements OnInit {
         this.authorname = this.quotes[i].authorname;
         this.user = this.quotes[i].user;
         this.best = this.quotes[i].likes;
-      }
-      if (this.best == 0) {
-
-        this.show = false;
-        this.resultshow = true;
-
       }
 
     }

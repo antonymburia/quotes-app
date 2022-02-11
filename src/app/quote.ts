@@ -1,13 +1,13 @@
 export class Quote {
-  id: number;
-  authorname: string;
-  user: string;
-  content: string;
-  day:  Date;
-  likes: number;
-  unlikes: number;
-  time:number;
-  key:string;
+   id: number;
+  public authorname: string;
+  public  user: string;
+  public  content: string;
+  public day:  Date;
+  public likes: number;
+  public  unlikes: number;
+  public  time:number;
+  public key:string;
 
   constructor(id: number, authorname: string, user: string, content: string, day: Date) {
     this.id = id;

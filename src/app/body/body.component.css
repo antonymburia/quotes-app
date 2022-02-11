@@ -9,7 +9,7 @@
   border-radius: 0 0 10px 10px;
   
 }
-.disp{
+span{
   font-weight: 900;
   color: red;
 }
@@ -17,11 +17,6 @@
   margin-top: 10px;
   padding: 0 2% 0 2%;
   width: 79%;
-}
-.result{
-  color: red;
-  font-size: large;
-  padding: 5%;
 }
 .besthd{
   box-shadow:rgb(246,94,162,0.4) 0px 0px 3px 4px;
